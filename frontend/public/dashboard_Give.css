@@ -1,0 +1,159 @@
+/* dashboard_Give.css tilhører dashboard_give.html */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* BODY */
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('bilde.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* HEADER */
+  header {
+    background: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .site-title h1 {
+    font-size: 1rem;
+  }
+  
+  .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-menu a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-menu a:hover {
+    text-decoration: underline;
+  }
+  
+  /* MAIN CONTAINER */
+  #dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 120px;
+    color: #333;
+    text-align: center;
+  }
+
+  .container h2,h3 {
+    color: rgb(43, 117, 177);
+  }
+  
+  /* INPUTS & BUTTONS */
+  input,
+  textarea,
+  button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #0056b3;
+    color: white;
+    cursor: pointer;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #5493bc;
+  }
+  
+  .logout-btn {
+    display: inline-block;
+    background-color: #42321B;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .logout-btn:hover {
+    background-color: #5a4837;
+  }
+  
+  /* FEILMELDING */
+  .error-message {
+    color: #7c4954;
+    font-size: 14px;
+  }
+  
+  /* FOOTER */
+  footer {
+    background: rgba(241, 241, 241, 0.9);
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  /* RESPONSIVT */
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 0 1rem;
+    }
+  
+    .nav-menu {
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+  
+    #dashboardContainer {
+      width: 90%;
+      margin-top: 100px;
+    }
+  }

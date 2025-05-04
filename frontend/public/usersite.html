@@ -1,0 +1,47 @@
+<!--usersite.html "Brukerside arbeidssøker"-->
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Min arbeidshistorikk</title>
+  <link rel="stylesheet" href="usersite.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="site-title"><h1>Min arbeidshistorikk</h1></div>
+      <a href="index.html" class="nav-link">Logg ut</a>
+    </div>
+  </header>
+
+  <!-- INNHOLD -->
+  <div class="container">
+    <h2>Arbeidshistorikk</h2>
+
+    <form id="historyForm">
+      <input type="text" id="jobTitle" placeholder="Jobbtittel (f.eks. FrontEnd-Utvikler)" required />
+      <input type="text" id="roleDescription" placeholder="Rollebeskrivelse (f.eks. Ansvarlig for utvikling av nettside)" required />
+      <input type="text" id="company" placeholder="Firma (f.eks. Firma AS)" required />
+      <input type="text" id="years" placeholder="Ansettelsesperiode (f.eks. mai 2018-mars 2022)" required />
+      <button type="submit">Legg til CV</button>
+    </form>
+
+    <button id="fetchHistoryBtn">Hent Arbeidshistorikk</button>
+    <ul id="historyList" class="history-list"></ul>
+
+    <button id="downloadCSVBtn">Last ned som CSV</button>
+
+    <button id="uploadBlockchainBtn">Last opp til blockchain - Sepolia Testnet</button>
+    <button id="deleteUserBtn" class="delete-user-btn">🗑️ Slett Bruker</button>
+  </div>
+
+  <footer>
+    <p>Eikrem ltd. 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

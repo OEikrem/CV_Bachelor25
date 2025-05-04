@@ -1,0 +1,186 @@
+/* register.css tilhører register.html */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body-styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url('bilde.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center; /* Midtstiller alt unntatt header */
+    text-align: center;
+}
+
+/* Header-styling */
+header {
+    background: rgba(51, 51, 51, 0.8); /* Litt gjennomsiktig for bedre kontrast */
+    color: #fff;
+    padding: 1rem;
+    position: fixed;  /* Fixer headeren på toppen */
+    top: 0; /* Fikser headeren på toppen */
+    width: 100%; /* Headeren skal dekke hele bredden */
+    text-align: center;
+    z-index: 10;  /* For å sørge for at headeren er over andre elementer */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Navigasjon */
+nav {
+    position: relative;
+    width: 100%;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Sentraliserer menypunktene */
+    padding: 1rem 0;
+}
+
+.nav-menu li {
+    margin-left: 1rem;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Burger-meny */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px; /* Juster plasseringen av burger-menyen */
+}
+
+.burger span {
+    height: 3px;
+    width: 25px;
+    background: #fff;
+    margin-bottom: 4px;
+    border-radius: 2px;
+}
+
+/* Container for registreringsskjema */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-width: 350px;
+    margin-top: 120px; /* For å gi plass til headeren */
+    width: 100%;
+}
+
+/* Form-styling */
+h2 {
+    color: rgb(43, 117, 177);
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Inputs og knapper */
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Styling på knapper */
+button {
+    background-color: #0056b3;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #5493bc;
+}
+
+/* Styling for feilmelding */
+.error-message {
+    color: #7c4954;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Layout for radio-knappene */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+    font-size: 16px;
+}
+
+.button-container label {
+    color: rgb(43, 117, 177);
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: rgba(241, 241, 241, 0.9);
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsiv styling */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #333;
+        width: 200px;
+    }
+
+    .nav-menu li {
+        margin: 1rem;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    body {
+        background-size: contain;
+        background-attachment: scroll;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}

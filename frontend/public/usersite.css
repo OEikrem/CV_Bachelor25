@@ -1,0 +1,175 @@
+/* usersite.css tilhører usersite.html */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('/bilde.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* HEADER */
+  header {
+    background: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .site-title {
+    font-size: 1rem;
+  }
+  
+  /* CONTAINER */
+  .container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 60px auto 80px;
+  }
+  .container h2,h3 {
+    color: rgb(43, 117, 177);
+  }
+  
+  /* FORM ELEMENTER & KNAPPER */
+  input,
+  button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #5493bc;
+    color: white;
+    cursor: pointer;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* SLETT-BRUKER */
+  .delete-user-btn {
+    background-color: #42321B;
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .delete-user-btn:hover {
+    background-color: #5a4837;
+  }
+  
+  /* LISTE */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+  }
+  
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    color: #333;
+  }
+  
+  li strong {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+  
+  .container li a {
+    margin: 6px 0;
+    color: #5493bc;
+    text-decoration: none;
+    word-break: break-word;
+  }
+  
+  li a:hover {
+    text-decoration: underline;
+  }
+  
+  li button {
+    align-self: flex-end;
+    background-color: #42321B;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  li button:hover {
+    background-color: #5a4837;
+  }
+  
+  /* FOOTER */
+  footer {
+    background: rgba(241, 241, 241, 0.95);
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+  }
+  
+  /* RESPONSIVT */
+  @media (max-width: 768px) {
+    body {
+      background-size: contain;
+      background-attachment: scroll;
+    }
+  
+    .header-container {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+  

@@ -1,0 +1,35 @@
+[
+  {
+    "inputs": [
+      { "internalType": "string", "name": "_jobTitle", "type": "string" },
+      { "internalType": "string", "name": "_company", "type": "string" },
+      { "internalType": "string", "name": "_workYears", "type": "string" },
+      { "internalType": "string", "name": "_roleDescription", "type": "string" }
+    ],
+    "name": "addWorkHistory",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_user", "type": "address" }
+    ],
+    "name": "getWorkHistory",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "string", "name": "jobTitle", "type": "string" },
+          { "internalType": "string", "name": "company", "type": "string" },
+          { "internalType": "string", "name": "workYears", "type": "string" },
+          { "internalType": "string", "name": "roleDescription", "type": "string" }
+        ],
+        "internalType": "struct WorkHistoryContract.WorkEntry[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

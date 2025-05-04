@@ -1,0 +1,69 @@
+<!-- blockchain.html -->
+ 
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Last opp til blockchain</title>
+  <link rel="stylesheet" href="blockchain.css">
+  <!-- Inkluder ethers.js som module -->
+  <script type="module" src="blockchain/ethers.umd.min.js"></script> <!-- JavaScript-fil hentet fra https://github.com/ethers-io/ethers.js/tree/main/dist-->
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="site-title"><h1>Blockchain</h1></div>
+      <nav>
+        <div class="burger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="usersite.html">Min CV</a></li>
+          <li><a href="index.html">Logg ut</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <h3>Arbeidshistorikk valgt for opplasting:</h3>
+    <ul id="workHistoryList"></ul> <!-- Arbeidshistorikken vises her -->
+
+    <h3>Sepolia Adresse</h3>
+    <!-- Brukerens Ethereum-adresse på Sepolia testnet. 
+     Dette kan endres til Ethereum Mainnet ved å bytte nettverk og kontraktadresse i MetaMask.
+     NB: For støtte til andre blockchains (som Bitcoin) kreves større endringer i kodestrukturen, da disse ikke bruker samme smartkontraktmodell. -->
+    <input type="text" id="sepoliaAddress" placeholder="Skriv inn din Sepolia adresse" required /> 
+    
+    <button id="uploadBtn">Last opp valgte arbeidshistorikk til blockchain</button>
+    
+    <h3>Transaksjonslogg</h3>
+    <ul id="txList"></ul>
+
+    <h3>🧾 Tidligere opplastede transaksjoner</h3>
+    <ul id="txLogList"></ul>
+  </div>
+  
+  <footer>
+    <div class="footer-content">
+      <p>Eikrem ltd. 2025</p>
+    </div>
+  </footer>
+
+  <!-- Inkluder Blockchain.js script (type="module") -->
+  <script type="module" src="blockchain/Blockchain.js"></script> 
+</body>
+</html>
+
+
+<!-- 
+  Laster inn ethers.js i nettleseren via UMD (Universal Module Definition). 
+  Brukes til å kommunisere med Ethereum-nettverket direkte fra frontend, f.eks. for å lese fra eller skrive til smartkontrakter.
+
+  Jeg benyttet UMD-versjonen av ethers.js (ethers.umd.min.js), som lar biblioteket lastes direkte i nettleseren uten behov for bundling eller pakkebehandling. 
+  Denne versjonen legger ethers på window-objektet, og er derfor inkludert i blockchain.html før Blockchain.js. 
+  Dette lar koden bruke ethers-biblioteket direkte i scriptet uten eksplisitt import, samtidig som Blockchain.js fungerer som et ES-modulskript.
+-->

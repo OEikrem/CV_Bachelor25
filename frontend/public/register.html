@@ -1,0 +1,60 @@
+<!--register.html "Registreringsside bruker"-->
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrering</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <header>
+    <div class="contain">
+      <div class="logo">
+        <h1>Registering</h1>
+      </div>
+      <nav>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="login.html">Login arbeidssøker</a></li>
+          <li><a href="login_give.html">Login arbeidsgiver</a></li>
+          <li><a href="index.html">Hjem</a></li>
+          <!-- Flere menypunkter kan legges til her -->
+        </ul>
+        <div id="burger" class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+<div class="container">
+    <h2>Registrer deg</h2>
+    <div class="button-container">
+      <label>
+          <input type="radio" name="userType" value="arbeidssøker" required> Arbeidssøker
+      </label>
+      <label>
+          <input type="radio" name="userType" value="arbeidsgiver" required> Arbeidsgiver
+      </label>
+    </div>
+    <form id="registerForm">
+        <input type="email" id="email" placeholder="E-post" required>
+        <input type="text" id="username" placeholder="Brukernavn" required>
+        <input type="password" id="password" placeholder="Passord" required>
+
+        <p id="error-message" class="error-message"></p>
+        <button type="submit">Registrer</button>
+    </form>
+</div>
+
+<footer>
+    <p>Eikrem ltd. 2025</p>
+</footer>
+
+<script src="register.js"></script> <!-- JavaScript-fil -->
+
+</body>
+</html>

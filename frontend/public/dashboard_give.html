@@ -1,0 +1,64 @@
+<!-- dashboard_give.html -->
+ 
+ <!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arbeidsgiver Dashboard</title>
+  <link rel="stylesheet" href="dashboard_give.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1 class="site-title">Arbeidsgiver - Godkjenn CV</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="login_give.html">Logg ut</a></li>
+          <li><a class="nav-link" href="index.html">Hjem</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="dashboardContainer">
+    <h2>Godkjenn arbeidshistorikk</h2>
+    <h3>Hent historikk med TransaksjonsId:</h3>
+
+    <div class="txid-section">
+      <input type="text" id="txid" placeholder="Skriv inn TxID" required />
+      <button id="fetchBtn">Hent data fra Blockchain</button>
+      <p id="errorMessage" class="error-message"></p>
+    </div>
+
+    <section id="workHistoryContainer" class="history-container"></section>
+
+    <div class="comment-section">
+      <label for="comment">Kommentarer:</label>
+      <textarea id="comment" placeholder="Skriv kommentar her..." rows="4"></textarea>
+    </div>
+
+    <div class="signature-section">
+      <label for="signedBy">Signert av:</label>
+      <input type="text" id="signedBy" placeholder="Ditt navn" />
+    </div>
+  </section>
+
+    <section class="approval-section">
+      <div class="cv-action-buttons">
+        <button id="approveBtn" class="action-btn">Godkjenn</button>
+        <button id="rejectBtn" class="action-btn">Ikke godkjenn</button>
+      </div>
+
+      
+
+      <a href="index.html" id="logoutBtn" class="logout-btn">Logg ut</a>
+  </main>
+
+  <footer>
+    <p>Eikrem ltd. 2025</p>
+  </footer>
+
+  <script src="dashboard_give.js"></script> <!-- JavaScript-fil -->
+</body>
+</html>

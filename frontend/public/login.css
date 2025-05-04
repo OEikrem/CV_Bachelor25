@@ -1,0 +1,138 @@
+/* login.css tilhører login.html og login_give.html */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-image: url('bilde.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center; /* Midtstiller alt unntatt header */
+  text-align: center;
+}
+
+/* Header Styling */
+header {
+  background: rgba(51, 51, 51, 0.8);
+  color: #fff;
+  padding: 1rem;
+  width: 100%;
+  position: fixed;  /* Fixed header */
+  top: 0;
+  left: 0;
+  z-index: 10; /* Ensures header stays on top */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title h1 {
+  font-size: 1.5rem;
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-menu a:hover {
+  text-decoration: underline;
+}
+
+/* Main content container (centering) */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-width: 350px;
+    margin-top: 120px; /* For å gi plass til headeren */
+    width: 100%;
+}
+
+.container h3 {
+  color: rgb(43, 117, 177);
+}
+
+/* Styling for inputs and buttons */
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #0056b3;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #007BFF;
+}
+
+.error-message {
+  color: #7c4954;
+  font-size: 14px;
+}
+
+p a {
+  color: #7c6249;
+  text-decoration: underline; 
+}
+
+p a:hover {
+  color: #333;
+}
+
+footer {
+  background: rgba(241, 241, 241, 0.9);
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: #333;
+      width: 200px;
+  }
+}
