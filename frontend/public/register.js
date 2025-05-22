@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        if (password.length < 6) {
+        if (password.length < 6) { // Denne bør endres til 12.
             document.getElementById("error-message").textContent = "Passordet må være minst 6 tegn langt.";
             return;
         }
@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const data = { email, password, role: userType, username };
 
         try {
+            // Send POST-forespørsel til backend for registrering
             const response = await fetch("http://localhost:3000/api/auth/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -53,29 +54,5 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Feil under registrering.");
         }
     });
-
-    async function addWorkHistory(jobTitle, company, years) {
-        const token = localStorage.getItem("token");
-        
-        try {
-            const response = await fetch("http://localhost:3000/api/workhistories", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`  // Hvis du bruker JWT for autentisering
-                },
-                body: JSON.stringify({ jobTitle, company, years })
-            });
-    
-            if (response.ok) {
-                const result = await response.json();
-                alert(result.message);  // F.eks. "Arbeidshistorikk lagret!"
-            } else {
-                throw new Error("Feil ved lagring av arbeidshistorikk");
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Kunne ikke lagre arbeidshistorikk.");
-        }
-    }    
+ 
 });

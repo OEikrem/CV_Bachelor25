@@ -1,5 +1,5 @@
 // Middleware for autentisering. Sjekker om brukeren er logget inn og har gyldig token før de får tilgang til beskyttede ruter
-   
+// Kode inspirert fra: https://dvmhn07.medium.com/jwt-authentication-in-node-js-a-practical-guide-c8ab1b432a49 
 const jwt = require("jsonwebtoken");
 
 function authMiddleware(req, res, next) {

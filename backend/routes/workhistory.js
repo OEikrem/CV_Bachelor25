@@ -63,10 +63,16 @@ router.post("/", authMiddleware, async (req, res) => {
   }
 });
 
-//GET: Hent ALLE arbeidshistorikkposter for gitt brukerID (offentlig)
-router.get("/user/:userId", async (req, res) => {
+//GET: Hent ALLE arbeidshistorikkposter for gitt brukerID (beskyttet)
+router.get("/user/:userId", authMiddleware, async (req, res) => {
+  const { userId } = req.params;
+
+  // Sjekk at bruker kun får hente sin egen historikk
+  if (req.user.id !== userId) {
+    return res.status(403).json({ message: "Ingen tilgang til denne brukerens historikk." });
+  }
+
   try {
-    const { userId } = req.params;
     const history = await WorkHistory.find({ user: userId });
 
     if (!history || history.length === 0) {

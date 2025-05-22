@@ -42,3 +42,9 @@ contract WorkHistoryContract {
         );
     }
 }
+
+/* Strukturen WorkEntry lagrer informasjon som stillingstittel, firma, årstall og beskrivelse.
+Data knyttes til brukeres adresser via en mapping, der hver bruker kun kan legge til sin egen arbeidshistorikk.
+Eventet WorkHistoryAdded brukes for å gjøre alle innlagte data sporbare og transparente.
+Det finnes ingen eksplisitt tilgangskontroll utover at brukere kun skriver til egne data.
+Verifikasjon av opplysningene forutsettes gjort utenfor kontrakten, mens blockchain sørger for uforanderlighet etter innlegging. */

@@ -28,11 +28,11 @@ app.use(cors({
 app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'"], // Tillat kun ressurser (JS, CSS, bilder) fra samme domene som appen kjører på
-    scriptSrc: ["'self'", "https://cdn.jsdelivr.net", "https://cdn.ethers.io"], // Tillat JS-filer + fra CDN-er: jsdelivr og ethers.io
-    styleSrc: ["'self'"], // Tillat kun CSS fra samme domene som appen kjører på
-    fontSrc: ["'self'"], // Tillat fontfiler + fra fonts.gstatic.com
+    scriptSrc: ["'self'", "https://cdn.jsdelivr.net", "https://cdn.ethers.io"], // Tillat JS-filer + fra CDN-er: jsdelivr og ethers.io / Hindrer XSS-angrep ved å blokkere injeksjon og kjøring av ondsinnet JS fra ukjente kilder.
+    styleSrc: ["'self'"], // Tillat kun CSS fra samme domene som appen kjører på / Forhindrer stilinjeksjon og "style-based" XSS-angrep.
+    fontSrc: ["'self'"], // Tillat fontfiler kun fra eget domene
     imgSrc: ["'self'"], // Bilder tillates kun fra eget domene
-    connectSrc: ["'self'", "http://localhost:3000"], //	Tillat fetch() og XHR til egen backend og http://localhost:3000
+    connectSrc: ["'self'", "http://localhost:3000"], //	Tillat fetch() og XHR til egen backend og http://localhost:3000 / Forhindrer at sensitiv data sendes til feil eller ondsinnet API.
   }
 }));
 
@@ -251,16 +251,6 @@ Det er verktøyet som brukes til å installere og håndtere avhengigheter (bibli
 Hvorfor har jeg det?
 Fordi prosjektet er bygget med Node.js (backend-serveren kjører med express, mongoose, etc.), prosjektet bruker tredjeparts-pakker som installeres via npm install og
 prosjektet trenger et system for å holde orden på hvilke versjoner av disse pakkene som er i bruk.
-
-Prosjektet har installert pakker som:
-
-express (webserver)
-
-mongoose (kobling til MongoDB)
-
-cors, helmet (sikkerhet)
-
-dotenv (miljøvariabler)
 
 Her er de avhengighetene som jeg har hentet til prosjektet (ikke alle er brukt)
 +-- axios@1.8.4

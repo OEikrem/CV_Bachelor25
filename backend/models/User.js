@@ -1,5 +1,6 @@
-// Databasemodell for brukere. Inneholder informasjon som e-post, passord og roller.
+// Databasemodell for brukere. Inneholder informasjon som e-post, passord og roller. 
 // Brukes for autentisering, autorisering og brukerhåndtering
+// Kode inspirert fra: https://dvmhn07.medium.com/jwt-authentication-in-node-js-a-practical-guide-c8ab1b432a49 
 
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");

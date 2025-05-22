@@ -3,7 +3,7 @@
 let downloadedWorkHistory = []; // lagre det som hentes
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("📌 script.js loaded");
+    console.log("script.js loaded");
 
     setupWorkHistoryForm();
     setupFetchWorkHistoryButton();

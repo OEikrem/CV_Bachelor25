@@ -1,4 +1,5 @@
-// Ruter for autentisering (auth). Inneholder endepunkter for innlogging, registrering og token-håndtering
+// Ruter for autentisering (auth). Inneholder endepunkter for innlogging, registrering og token-håndtering. 
+// Kode inspirert fra https://dvmhn07.medium.com/jwt-authentication-in-node-js-a-practical-guide-c8ab1b432a49
 
 const express = require("express");
 const bcrypt = require("bcrypt");
